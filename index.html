@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Deals - Your Ultimate Destination for Cutting-Edge Tech Deals</title>
+    <meta name="description" content="Discover unbeatable deals on Gaming PCs, Home Mini Projectors, and High-Tech Tablets at Drop Deals. Shop our curated selection of cutting-edge technology at competitive prices.">
+    <meta name="keywords" content="tech deals, gaming pc, mini projector, tablet, AMD Ryzen, CHUWI, BYINTEK, GMKtec, HORLAT, affordable tech, compact computing">
+    <meta name="author" content="Drop Deals">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dropdeals.com/">
+    <meta property="og:title" content="Drop Deals - Your Ultimate Destination for Cutting-Edge Tech Deals">
+    <meta property="og:description" content="Discover unbeatable deals on Gaming PCs, Home Mini Projectors, and High-Tech Tablets at Drop Deals.">
+    <meta property="og:image" content="https://dropdeals.com/images/drop-deals-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dropdeals.com/">
+    <meta property="twitter:title" content="Drop Deals - Your Ultimate Destination for Cutting-Edge Tech Deals">
+    <meta property="twitter:description" content="Discover unbeatable deals on Gaming PCs, Home Mini Projectors, and High-Tech Tablets at Drop Deals.">
+    <meta property="twitter:image" content="https://dropdeals.com/images/drop-deals-twitter.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/poppins@4.5.0/index.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@4.5.0/index.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --primary-light: #8b5cf6;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --dark-bg: #121212;
+            --dark-bg-light: #1e1e1e;
+            --dark-card: #252525;
+            --text-light: #f9fafb;
+            --text-gray: #9ca3af;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+        
+        .logo-text {
+            background: linear-gradient(90deg, var(--primary-light), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--dark-bg), var(--dark-bg-light));
+        }
+        
+        .card {
+            background-color: var(--dark-card);
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 2px var(--primary-light);
+        }
+        
+        .card-image-container {
+            overflow: hidden;
+            position: relative;
+            padding-top: 75%; /* 4:3 aspect ratio */
+            background-color: #1a1a1a;
+        }
+        
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+        
+        .category-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .search-input {
+            background-color: var(--dark-card);
+            border: 1px solid #3f3f46;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(109, 40, 217, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(109, 40, 217, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(90deg, var(--secondary-color), #34d399);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+        }
+        
+        .truncate-3-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+        
+        .carousel-container {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+        
+        /* Pulse animation for featured products */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Category badges */
+        .category-badge {
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            box-shadow: 0 2px 4px -1px rgba(109, 40, 217, 0.2);
+        }
+        
+        /* Product modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-content {
+            background-color: var(--dark-card);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 800px;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .close {
+            color: var(--text-gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: var(--text-light);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Loading effects */
+        .shimmer {
+            background: linear-gradient(
+                90deg,
+                var(--dark-card) 0%,
+                #3a3a3a 50%,
+                var(--dark-card) 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+        
+        /* Footer styling */
+        .footer {
+            background: linear-gradient(to top, var(--dark-bg), transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient-bg sticky top-0 z-40 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="text-4xl font-extrabold logo-text mr-2">
+                    Drop Deals
+                </div>
+                <span class="text-xs md:text-sm text-gray-400">Your ultimate destination for cutting-edge tech deals</span>
+            </div>
+            
+            <div class="w-full md:w-1/3 relative">
+                <input type="text" id="search" placeholder="Search products..." class="search-input w-full py-2 px-4 rounded-full text-white focus:outline-none">
+                <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="py-10 md:py-16 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="relative z-10 max-w-4xl mx-auto text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    Discover <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-green-400">Premium Tech</span> That Won't Break The Bank
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    Curated selections of Gaming PCs, Mini Projectors, and Tablets at unbeatable prices
+                </p>
+                <a href="#products" class="btn-primary px-8 py-3 rounded-full inline-block text-lg font-medium">
+                    Explore Now
+                </a>
+            </div>
+        </div>
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-purple-800 filter blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-green-800 filter blur-3xl"></div>
+        </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="py-10 px-4" id="featured">
+        <div class="container mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 category-title">Featured Products</h2>
+            
+            <div class="carousel-container flex space-x-6 pb-6">
+                <!-- Featured Item 1 -->
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 lg:w-1/4">
+                    <div class="card pulse">
+                        <div class="category-badge absolute top-4 right-4 z-10">
+                            Gaming PC
+                        </div>
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/b44121a02e0279f5f37061ab3e5f61d8" 
+                                 alt="Genmachine 8845HS Mini PC with AMD Ryzen 7 processor"
+                                 class="card-image" loading="lazy">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Genmachine 8845HS Mini PC</h3>
+                            <p class="text-gray-300 truncate-3-lines mb-4">
+                                Powered by AMD Ryzen 7 8845HS with 8 Cores 16 Threads at 5.1GHz
+                            </p>
+                            <a href="https://s.click.aliexpress.com/e/_ophEesv" target="_blank" class="btn-primary py-2 px-6 rounded-lg w-full block text-center font-medium">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Item 2 -->
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 lg:w-1/4">
+                    <div class="card">
+                        <div class="category-badge absolute top-4 right-4 z-10">
+                            Projector
+                        </div>
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/89d8f3cc0a3db188a226f5f85cc7a176" 
+                                 alt="HORLAT 25000 Lumens Android Projector" 
+                                 class="card-image" loading="lazy">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">HORLAT 25000 Lumens Projector</h3>
+                            <p class="text-gray-300 truncate-3-lines mb-4">
+                                Powerful 25000 lumens with 5G 1080P native resolution and Android OS
+                            </p>
+                            <a href="https://s.click.aliexpress.com/e/_okhVYiH" target="_blank" class="btn-primary py-2 px-6 rounded-lg w-full block text-center font-medium">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Item 3 -->
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 lg:w-1/4">
+                    <div class="card">
+                        <div class="category-badge absolute top-4 right-4 z-10">
+                            Tablet
+                        </div>
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/543d03a91f275f97284bb52f87720488" 
+                                 alt="CHUWI MiniBook X Laptop Tablet 2-in-1" 
+                                 class="card-image" loading="lazy">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">CHUWI MiniBook X 2-in-1</h3>
+                            <p class="text-gray-300 truncate-3-lines mb-4">
+                                10.51" IPS FHD display with Intel N150, 12GB RAM & 512GB storage
+                            </p>
+                            <a href="https://s.click.aliexpress.com/e/_ol6lPoh" target="_blank" class="btn-primary py-2 px-6 rounded-lg w-full block text-center font-medium">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="py-10 px-4" id="products">
+        <div class="container mx-auto">
+            <!-- Gaming PCs -->
+            <div class="mb-16" id="gaming-pcs">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 category-title">Gaming PCs</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Genmachine 8845HS Mini PC -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="Genmachine 8845HS Mini PC">
+                        <meta itemprop="description" content="Discover the future of compact computing with the Genmachine 8845HS Mini PC Windows 11 WiFi 6 Gaming PC Support DDR5 4800MHz Ram Display Gaming PC DIY Gaming Computer Ordenador.">
+                        <meta itemprop="brand" content="Genmachine">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/b44121a02e0279f5f37061ab3e5f61d8" 
+                                 alt="Genmachine 8845HS Mini PC with AMD Ryzen 7 processor" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">Genmachine 8845HS Mini PC</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-purple-800 text-xs px-2 py-1 rounded mr-2">AMD Ryzen™ 7</span>
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">WiFi 6</span>
+                                <span class="bg-green-800 text-xs px-2 py-1 rounded">8 Cores</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Discover the future of compact computing with the Genmachine 8845HS Mini PC Windows 11 WiFi 6 Gaming PC Support DDR5 4800MHz Ram Display Gaming PC DIY Gaming Computer Ordenador.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('genmachine')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_ophEesv" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GMKtec G3 Mini PC -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="GMKtec G3 Mini PC">
+                        <meta itemprop="description" content="Meet the GMKtec G3 Mini PC – your compact powerhouse for work, entertainment, and everything in between!">
+                        <meta itemprop="brand" content="GMKtec">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/952a72df3e32836277bd8e5b89959cd2" 
+                                 alt="GMKtec G3 Mini PC with Intel processor" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">GMKtec G3 Mini PC</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">Intel N100</span>
+                                <span class="bg-purple-800 text-xs px-2 py-1 rounded mr-2">8/16GB RAM</span>
+                                <span class="bg-green-800 text-xs px-2 py-1 rounded">WiFi 6</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Meet the GMKtec G3 Mini PC – your compact powerhouse for work, entertainment, and everything in between! Powered by the cutting-edge Intel Alder Lake N100 processor and running Windows 11 Pro.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('gmktec')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_oCgkojF" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Home Mini Projectors -->
+            <div class="mb-16" id="projectors">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 category-title">Home Mini Projectors</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- HORLAT T03 Projector -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="HORLAT T03 Projector">
+                        <meta itemprop="description" content="Elevate your entertainment with the HORLAT T03 1100 ANSI Lumens Android 4K LED Projector.">
+                        <meta itemprop="brand" content="HORLAT">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/74423b67d2d3c5bd59a1c90a10d11471" 
+                                 alt="HORLAT T03 Projector with 2500 Lumens and 4K support" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">HORLAT T03 Projector</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-red-800 text-xs px-2 py-1 rounded mr-2">2500 Lumens</span>
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">4K Support</span>
+                                <span class="bg-purple-800 text-xs px-2 py-1 rounded">Bluetooth</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Elevate your entertainment with the HORLAT T03 1100 ANSI Lumens Android 4K LED Projector. This compact powerhouse delivers crystal-clear Full HD 1080P visuals, with support for 4K and 8K decoding.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('horlat-t03')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_okeeY8Z" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BYINTEK P70 Mini Projector -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="BYINTEK P70 Mini Projector">
+                        <meta itemprop="description" content="Transform your entertainment with the BYINTEK P70 4K 1080P DLP Mini Portable Projector, a sleek powerhouse designed for movie lovers, gamers, and on-the-go professionals.">
+                        <meta itemprop="brand" content="BYINTEK">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/906e76e020deb7054c91e320c1f167b8" 
+                                 alt="BYINTEK P70 Mini Projector with 3D and 4K support" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">BYINTEK P70 Mini Projector</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-cyan-800 text-xs px-2 py-1 rounded mr-2">3D</span>
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">4K</span>
+                                <span class="bg-green-800 text-xs px-2 py-1 rounded">Portable</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Transform your entertainment with the BYINTEK P70 4K 1080P DLP Mini Portable Projector, a sleek powerhouse designed for movie lovers, gamers, and on-the-go professionals.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('byintek-p70')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_oDosCop" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HORLAT 25000 Lumens Projector -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="HORLAT 25000 Lumens Projector">
+                        <meta itemprop="description" content="Elevate your entertainment with the HORLAT 25000 Lumens Android Beamer Outdoor Projector, a powerhouse of compact innovation.">
+                        <meta itemprop="brand" content="HORLAT">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/89d8f3cc0a3db188a226f5f85cc7a176" 
+                                 alt="HORLAT 25000 Lumens Android Projector with streaming service support" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">HORLAT 25000 Lumens Projector</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-yellow-800 text-xs px-2 py-1 rounded mr-2">25000 Lumens</span>
+                                <span class="bg-green-800 text-xs px-2 py-1 rounded mr-2">Android</span>
+                                <span class="bg-red-800 text-xs px-2 py-1 rounded">5G</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Elevate your entertainment with the HORLAT 25000 Lumens Android Beamer Outdoor Projector, a powerhouse of compact innovation. Boasting native Full HD 1080P resolution and 8K video support.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('horlat-25000')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_okhVYiH" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lumens Portable Projector -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="Lumens Portable Projector">
+                        <meta itemprop="description" content="Elevate your entertainment with the Lumens Auto Focus/Keystone WiFi 6 Support Dolby Portable Home Theater Projector.">
+                        <meta itemprop="brand" content="WIMIUS">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/96d7f0c2803969ae0eb4beb97e3a04e3" 
+                                 alt="WIMIUS Portable Projector with WiFi 6 and Dolby Audio" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">Lumens Portable Projector</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">WiFi 6</span>
+                                <span class="bg-purple-800 text-xs px-2 py-1 rounded mr-2">Dolby Audio</span>
+                                <span class="bg-indigo-800 text-xs px-2 py-1 rounded">1080p FHD</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Elevate your entertainment with the Lumens Auto Focus/Keystone WiFi 6 Support Dolby Portable Home Theater Projector. This sleek, portable powerhouse delivers stunning 1080P visuals with 4K support.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('lumens')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_oEa2Qct" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- High-Tech Tablets -->
+            <div class="mb-16" id="tablets">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 category-title">High-Tech Tablets</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- CHUWI MiniBook X Laptop Tablet 2-in-1 -->
+                    <div class="card" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="CHUWI MiniBook X Laptop Tablet 2-in-1">
+                        <meta itemprop="description" content="Discover the CHUWI MiniBook X Laptop Tablet 2-in-1 – where portability meets power!">
+                        <meta itemprop="brand" content="CHUWI">
+                        <div class="card-image-container">
+                            <img src="https://page.genspark.site/v1/base64_upload/543d03a91f275f97284bb52f87720488" 
+                                 alt="CHUWI MiniBook X Laptop Tablet 2-in-1 with 10.51 inch IPS display" 
+                                 class="card-image" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3" itemprop="name">CHUWI MiniBook X Laptop Tablet 2-in-1</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-blue-800 text-xs px-2 py-1 rounded mr-2">10.51" IPS</span>
+                                <span class="bg-green-800 text-xs px-2 py-1 rounded mr-2">12GB RAM</span>
+                                <span class="bg-purple-800 text-xs px-2 py-1 rounded">512GB SSD</span>
+                            </div>
+                            <p class="text-gray-300 mb-4 truncate-3-lines" itemprop="description">
+                                Discover the CHUWI MiniBook X Laptop Tablet 2-in-1 – where portability meets power! Featuring a vibrant 10.51" FHD IPS screen (1200*1920), this little wonder is driven by an Intel N150 CPU.
+                            </p>
+                            <div class="flex mt-auto">
+                                <a href="#" class="text-gray-300 hover:text-white mr-3 text-sm underline" onclick="showProductDetails('chuwi')">
+                                    Learn More
+                                </a>
+                                <div class="flex-grow"></div>
+                                <a href="https://s.click.aliexpress.com/e/_ol6lPoh" target="_blank" class="btn-primary py-2 px-6 rounded-lg inline-block font-medium" itemprop="url">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 px-4 gradient-bg relative overflow-hidden">
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Tech?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Don't miss out on these exclusive deals. All products come with warranty protection and fast worldwide shipping.
+            </p>
+            <a href="#featured" class="btn-secondary px-8 py-3 rounded-full inline-block text-lg font-medium">
+                Shop Featured Deals
+            </a>
+        </div>
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-purple-800 filter blur-3xl"></div>
+            <div class="absolute top-0 right-1/4 w-60 h-60 rounded-full bg-green-800 filter blur-3xl"></div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer py-10 px-4">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <div class="text-3xl font-extrabold logo-text mb-4">
+                    Drop Deals
+                </div>
+                <p class="text-gray-400 mb-6">Your ultimate destination for cutting-edge tech deals</p>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-pinterest"></i></a>
+                </div>
+                <div class="text-sm text-gray-500">
+                    <p>© 2023 Drop Deals. All rights reserved.</p>
+                    <p>Affiliate links are used on this site. We may earn a commission if you make a purchase.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Product Modals -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('keyup', function(event) {
+            const searchTerm = event.target.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                // Reset all cards if search term is too short
+                document.querySelectorAll('.card').forEach(card => {
+                    card.closest('.grid > *').style.display = 'block';
+                });
+                
+                // Show all category sections
+                document.querySelectorAll('section > div > div[id]').forEach(section => {
+                    section.style.display = 'block';
+                });
+                
+                return;
+            }
+            
+            // Hide all cards first
+            document.querySelectorAll('.card').forEach(card => {
+                const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                const cardDescription = card.querySelector('p').textContent.toLowerCase();
+                const cardParent = card.closest('.grid > *');
+                
+                if (cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+                    cardParent.style.display = 'block';
+                } else {
+                    cardParent.style.display = 'none';
+                }
+            });
+            
+            // Hide empty category sections
+            document.querySelectorAll('section > div > div[id]').forEach(section => {
+                const visibleCards = section.querySelectorAll('.grid > *[style="display: block"]').length;
+                if (visibleCards === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        });
+        
+        // Product modal functionality
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        
+        function showProductDetails(productId) {
+            // Get product details based on ID
+            let content = '';
+            
+            switch(productId) {
+                case 'genmachine':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Genmachine 8845HS Mini PC</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/b44121a02e0279f5f37061ab3e5f61d8" alt="Genmachine 8845HS Mini PC" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>Powerful AMD Ryzen 7 8845HS processor with 8 Cores & 16 Threads at 5.1GHz</li>
+                                    <li>Support for DDR5 4800MHz RAM for lightning-fast multitasking</li>
+                                    <li>WiFi 6 connectivity for ultra-fast wireless performance</li>
+                                    <li>Windows 11 pre-installed</li>
+                                    <li>Compact, space-saving design perfect for any setup</li>
+                                    <li>Multiple ports for versatile connectivity options</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Discover the future of compact computing with the Genmachine 8845HS Mini PC Windows 11 WiFi 6 Gaming PC Support DDR5 4800MHz Ram Display Gaming PC DIY Gaming Computer Ordenador. Powered by the Intel Alder Lake N100 processor, this mini marvel delivers robust performance in an ultra-sleek, space-saving design—perfect for gamers, professionals, and tech enthusiasts alike. With lightning-fast DDR5 4800MHz RAM support and WiFi 6 connectivity, experience seamless multitasking and lag-free gaming. Its versatile ports, including USB, HDMI, and more, ensure effortless integration into any setup, from minimalist workspaces to high-octane entertainment hubs. Measuring just a fraction of traditional PCs, it's the ultimate blend of power and portability. Whether you're streaming in crisp 4K, tackling DIY projects, or conquering virtual battlefields, this mini PC adapts to your lifestyle with energy-efficient brilliance. Upgrade your setup today and redefine what small can do!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_ophEesv" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'gmktec':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">GMKtec G3 Mini PC</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/952a72df3e32836277bd8e5b89959cd2" alt="GMKtec G3 Mini PC" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>Powered by Intel Alder Lake N100 processor</li>
+                                    <li>8/16GB DDR4 RAM for smooth multitasking</li>
+                                    <li>256/512GB PCIe M.2 SSD for fast storage</li>
+                                    <li>Windows 11 Pro pre-installed</li>
+                                    <li>WiFi 6 and Bluetooth 5.2 connectivity</li>
+                                    <li>4K display support</li>
+                                    <li>Compact, space-saving design</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Meet the GMKtec G3 Mini PC – your compact powerhouse for work, entertainment, and everything in between! Powered by the cutting-edge Intel Alder Lake N100 processor and running Windows 11 Pro, this mini marvel delivers blazing-fast performance with 8/16GB DDR4 RAM and a 256/512GB PCIe M.2 SSD. Stay connected with WiFi 6 and Bluetooth 5.2, all packed into a sleek, space-saving design. Whether you're streaming in crisp 4K, tackling projects, or decluttering your desk, the GMKtec G3 has you covered. Upgrade your tech game today – click to get yours and experience the future of computing!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_oCgkojF" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'horlat-t03':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">HORLAT T03 Projector</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/74423b67d2d3c5bd59a1c90a10d11471" alt="HORLAT T03 Projector" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>2500 Lumens brightness for vibrant images</li>
+                                    <li>4K Support for ultra-high definition viewing</li>
+                                    <li>3D Cinema capability</li>
+                                    <li>Bluetooth connectivity</li>
+                                    <li>Support for popular streaming services: Netflix, Disney+, Max, Prime Video</li>
+                                    <li>Compact and portable design</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Elevate your entertainment with the HORLAT T03 1100 ANSI Lumens Android 4K LED Projector. This compact powerhouse delivers crystal-clear Full HD 1080P visuals, with support for 4K and 8K decoding, powered by an Intel Alder Lake N100 processor for seamless performance. Its sleek, portable design fits any space, from minimalist home offices to cozy movie nights. With 1100 ANSI lumens, enjoy vibrant images even in ambient light, projected up to 300 inches. Featuring auto keystone correction and 5G WiFi, setup is effortless, while dual-band connectivity ensures lag-free streaming on Netflix, YouTube, and more via Android 9.0. Sync your smartphone for wireless mirroring or connect via HDMI, USB, AV, or 3.5mm ports for versatile use—perfect for gaming, presentations, or binge-watching. The built-in Dolby audio speakers deliver immersive sound, no extras needed. Energy-efficient and eye-friendly, the HORLAT T03 is your gateway to big-screen thrills in a small package. Upgrade your setup today and experience compact computing like never before!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_okeeY8Z" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'byintek-p70':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">BYINTEK P70 Mini Projector</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/906e76e020deb7054c91e320c1f167b8" alt="BYINTEK P70 Mini Projector" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>3D and Shutter 3D support for immersive experiences</li>
+                                    <li>4K resolution capability for stunning visuals</li>
+                                    <li>Compact DLP display technology</li>
+                                    <li>1.5-2.5 hours battery life for portable viewing</li>
+                                    <li>4K Max Support for next-level clarity</li>
+                                    <li>Lightweight design at just 0.5kg</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Transform your entertainment with the BYINTEK P70 4K 1080P DLP Mini Portable Projector, a sleek powerhouse designed for movie lovers, gamers, and on-the-go professionals. Powered by the advanced DLP display with an Intel Alder Lake N100 processor, this compact projector delivers stunning 4K resolution and vibrant 1080p visuals, projecting up to a 200-inch screen for an immersive experience. Weighing just 0.5kg, its pocket-sized design and built-in 8000mAh battery (up to 3 hours of playtime) make it ideal for home theaters, outdoor movie nights, or travel. Stay connected with smart Wi-Fi and Bluetooth, supporting seamless streaming from Android, iOS, or PC devices, plus wired USB-C syncing. The P70 boasts versatile ports—HDMI, USB, and 3.5mm audio—for easy connections to consoles, laptops, or speakers. Auto-focus and 6D keystone correction ensure sharp, perfectly aligned images from any angle. With a 30,000-hour LED lifespan, enjoy years of crisp visuals. Compact yet powerful, the BYINTEK P70 redefines portable entertainment. Upgrade your setup today!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_oDosCop" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'horlat-25000':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">HORLAT 25000 Lumens Projector</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/89d8f3cc0a3db188a226f5f85cc7a176" alt="HORLAT 25000 Lumens Projector" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>Powerful 21000 Lumens brightness</li>
+                                    <li>5G 1080P Native resolution</li>
+                                    <li>Android operating system with app support</li>
+                                    <li>Bluetooth and WiFi connectivity</li>
+                                    <li>Support for all major streaming services: YouTube, Netflix, Hulu, Disney+, Prime Video</li>
+                                    <li>Compact and portable design</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Elevate your entertainment with the HORLAT 25000 Lumens Android Beamer Outdoor Projector, a powerhouse of compact innovation. Boasting native Full HD 1080P resolution and 8K video support, this projector delivers crystal-clear visuals with vibrant colors, powered by the Intel Alder Lake N100 processor for seamless performance. Its 25,000 lumens brightness ensures stunning clarity, even in ambient light, making it ideal for home theater, gaming, or outdoor movie nights. Measuring just 7.1 x 5.5 x 2.6 inches, its sleek, portable design fits anywhere, while WiFi6 and Bluetooth 5.2 offer effortless connectivity to stream from Netflix, YouTube, or your devices. Multiple ports—HDMI, USB, and AV—ensure compatibility with laptops, gaming consoles, and more. The auto keystone correction and 50% zoom simplify setup, adapting to any space, from cozy living rooms to professional presentations. Energy-efficient and whisper-quiet, it's built for long-lasting enjoyment. Transform your viewing experience with this versatile mini PC in projector form—perfect for minimalist setups or on-the-go adventures. Upgrade your cinematic journey today!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_okhVYiH" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'lumens':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Lumens Portable Projector</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/96d7f0c2803969ae0eb4beb97e3a04e3" alt="Lumens Portable Projector" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>1080P Full HD resolution</li>
+                                    <li>Unique design with compact form factor</li>
+                                    <li>Auto adjust feature for easy setup</li>
+                                    <li>Dolby Audio support for premium sound quality</li>
+                                    <li>Sealed optics for dust protection</li>
+                                    <li>WiFi 6 connectivity for fast streaming</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Elevate your entertainment with the Lumens Auto Focus/Keystone WiFi 6 Support Dolby Portable Home Theater Projector. This sleek, portable powerhouse delivers stunning 1080P visuals with 4K support and vibrant lumens, ensuring crisp, vivid images even in ambient light. Setup is a breeze with auto-focus and keystone correction, instantly aligning your picture for a flawless cinematic experience. Stream seamlessly via WiFi 6, and immerse yourself in rich Dolby audio that fills any space with theater-quality sound. Compact and versatile, it's perfect for cozy movie nights, backyard parties, or on-the-go presentations. Connect effortlessly with HDMI, USB, and Bluetooth ports to suit any device. Energy-efficient and travel-friendly, this projector transforms any room—or outdoor space—into a captivating home theater. Whether you're a movie buff or a casual viewer, the Lumens projector brings your stories to life with unparalleled ease and style. Ready to redefine your viewing experience? Bring the theater home today with Lumens, the ultimate choice for portable, high-performance projection.
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_oEa2Qct" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'chuwi':
+                    content = `
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">CHUWI MiniBook X Laptop Tablet 2-in-1</h2>
+                            <div class="my-4">
+                                <img src="https://page.genspark.site/v1/base64_upload/543d03a91f275f97284bb52f87720488" alt="CHUWI MiniBook X" class="w-full max-w-md mx-auto rounded">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-semibold mb-2">Product Highlights</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>10.51" IPS FHD display (1200×1920 resolution)</li>
+                                    <li>Intel N150 processor for reliable performance</li>
+                                    <li>12GB LPDDR5 RAM for smooth multitasking</li>
+                                    <li>512GB SSD storage</li>
+                                    <li>Windows 11 pre-installed</li>
+                                    <li>Versatile 2-in-1 design that converts from laptop to tablet</li>
+                                    <li>1-year warranty and fast shipping</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Discover the CHUWI MiniBook X Laptop Tablet 2-in-1 – where portability meets power! Featuring a vibrant 10.51" FHD IPS screen (1200*1920), this little wonder is driven by an Intel N150 CPU, lightning-fast 12GB LPDDR5 RAM, and a spacious 512GB SSD. Whether you're working, streaming, or sketching, its versatile design flips effortlessly from laptop to tablet mode. Preloaded with Windows 11, it's ready to keep up with your busy life. Lightweight, stylish, and packed with performance – why settle for less? Click below to make the MiniBook X yours today!
+                            </p>
+                            <div class="text-center">
+                                <a href="https://s.click.aliexpress.com/e/_ol6lPoh" target="_blank" class="btn-primary py-3 px-8 rounded-lg inline-block font-medium">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                default:
+                    content = '<p>Product details not found.</p>';
+            }
+            
+            // Update modal content and display it
+            modalContent.innerHTML = content;
+            modal.style.display = 'block';
+            
+            // Fade in animation
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                document.querySelector('.modal-content').style.transform = 'translateY(0)';
+            }, 10);
+        }
+        
+        // Close modal when clicking the close button
+        closeBtn.addEventListener('click', closeModal);
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        function closeModal() {
+            document.querySelector('.modal-content').style.transform = 'translateY(-20px)';
+            modal.style.opacity = '0';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.src;
+                            observer.unobserve(image);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(image) {
+                    imageObserver.observe(image);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(image) {
+                    image.src = image.src;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
